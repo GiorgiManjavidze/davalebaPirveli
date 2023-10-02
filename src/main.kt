@@ -2,42 +2,42 @@
 //დაწერეთ ფუნქცია, რომელიც მიიღებს 2 მთელ რიცხვს (n და m) და დააბრუნებს მთელი რიცხვების მასივს. ფუნქციამ უნდა
 //გამოიანგარიშოს n - დან m - მდე დიაპაზონში ყველა ისეთი რიცხვი-პალინდრომი, რომელიც კვადრატში ახარისხებისას
 //კვლავ პალინდრომს იძლევა. */
-//
-//fun isPal(num: Int): Boolean {
-//    val strNum = num.toString()
-//    return strNum == strNum.reversed()
-//}
-//
-//fun Palindrome(start: Int, end: Int): List<Int> {
-//    val result = mutableListOf<Int>()
-//
-//    for (number in start..end) {
-//        if (isPal(number)) {
-//            val square = number * number
-//            if (isPal(square)) {
-//                result.add(number)
-//            }
-//        }
-//    }
-//
-//    return result
-//}
-//
-//fun main() {
-//    println("შეიყვანეთ n: ")
-//    val n = readLine()?.toIntOrNull() ?: 0
-//
-//    println("შეიყვანეთ n: ")
-//    val m = readLine()?.toIntOrNull() ?: 1000
-//
-//    val palindromes = Palindrome(n, m)
-//
-//    if (palindromes.isEmpty()) {
-//        println("Error!")
-//    } else {
-//        println("პალინდრომები : ${palindromes.joinToString(", ")}")
-//    }
-//}
+
+fun isPal(num: Int): Boolean {
+    val strNum = num.toString()
+    return strNum == strNum.reversed()
+}
+
+fun Palindrome(start: Int, end: Int): List<Int> {
+    val result = mutableListOf<Int>()
+
+    for (number in start..end) {
+        if (isPal(number)) {
+            val square = number * number
+            if (isPal(square)) {
+                result.add(number)
+            }
+        }
+    }
+
+    return result
+}
+
+fun main() {
+    println("შეიყვანეთ n: ")
+    val n = readLine()?.toIntOrNull() ?: 0
+
+    println("შეიყვანეთ n: ")
+    val m = readLine()?.toIntOrNull() ?: 1000
+
+    val palindromes = Palindrome(n, m)
+
+    if (palindromes.isEmpty()) {
+        println("Error!")
+    } else {
+        println("პალინდრომები : ${palindromes.joinToString(", ")}")
+    }
+}
 
 
 /*
